@@ -3,13 +3,13 @@
 abra o projeto spring com sua ide de preferencia, 
 abra o arquivo application.properties e substitua: 
 - a url de conexão do seu banco de dados mysql
-- usuario
+- usuário
 - senha
 - execute o projeto no arquivo MovFinApplication.java
 
 # Instruções para rodar o projeto vue:
-- instale o vue na sua maquina na versão 2.5.18
-- ultilize o yarn ou npm para instalar as depencendias do package.json
+- instale o vue na sua máquina na versão 2.5.18
+- ultilize o yarn ou npm para instalar as dependências do package.json
 - inicie o projeto com yarn serve OU npm run serve
 
 # A api tem 3 endpoints:
