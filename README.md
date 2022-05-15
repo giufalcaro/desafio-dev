@@ -17,4 +17,8 @@ abra o arquivo application.properties e substitua:
 2. /find ->  busque todos os dados no banco
 3. /findByCpf -> busque dados cpf
 
+# Ao abrir o site
+1. clique na aba upload e suba seu arquivo
+2. volte na aba tabela e faça a busca
+
 # Abra o arquivo de exemplos para importar os endpoints no postman
