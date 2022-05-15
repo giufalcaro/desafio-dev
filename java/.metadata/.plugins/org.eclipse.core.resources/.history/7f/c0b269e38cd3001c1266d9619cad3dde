@@ -1,0 +1,11 @@
+package com.movFin.api.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cnab")
+public class Cnab {
+
+	
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=api/\/home\/giuliano\/.m2\/repository\/org\/springframework\/boot\/spring-boot-autoconfigure\/2.6.7\/spring-boot-autoconfigure-2.6.7.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.boot=/=/maven.artifactId=/spring-boot-autoconfigure=/=/maven.version=/2.6.7=/=/maven.scope=/compile=/&lt;org.springframework.boot.autoconfigure.security.oauth2.resource.reactive(ReactiveOAuth2ResourceServerJwkConfiguration$WebSecurityConfiguration.class[WebSecurityConfiguration" modifiers="8" timestamp="1652461183722"/>
+    <typeInfo handle="=api/\/home\/giuliano\/.m2\/repository\/org\/springframework\/spring-web\/5.3.19\/spring-web-5.3.19.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-web=/=/maven.version=/5.3.19=/=/maven.scope=/compile=/&lt;org.springframework.web.cors(CorsConfiguration.class[CorsConfiguration" modifiers="33" timestamp="1652461185222"/>
+</typeInfoHistroy>

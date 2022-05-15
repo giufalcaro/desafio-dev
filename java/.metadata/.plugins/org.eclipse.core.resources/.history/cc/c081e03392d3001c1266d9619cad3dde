@@ -1,0 +1,64 @@
+package com.movFin.api.service;
+
+import com.movFin.api.model.Cnab;
+import com.movFin.api.repository.CnabRepository;
+
+public class CnabService implements ICnabService {
+	
+	private CnabRepository cnabRepository;
+	
+	public void saveCnab(String line) {
+		  
+	  	String tipo = discoverType(line.substring(0, 1));
+	  	String data = line.substring(1, 9);
+	  	String valor = convertValue(line.substring(9, 19)).toString();
+	  	String cpf = line.substring(19, 30);
+	  	String cartao = line.substring(30, 42);
+	  	String hora = line.substring(42, 48);
+	  	String nomeRepresentante = line.substring(48, 62);
+	  	String nomeLoja = line.substring(62, 80);
+	  	
+	  	Cnab cnab = Cnab.criar();
+	  	cnab.setTipo(tipo);
+	  	cnab.setData(data);
+	  	cnab.setValor(Double.valueOf(valor));
+	  	cnab.setCpf(cpf);
+	  	cnab.setCartao(cartao);
+	  	cnab.setHora(hora);
+	  	cnab.setNomeRepresentante(nomeRepresentante);
+	  	cnab.setNomeLoja(nomeLoja);
+	  	
+	  	cnabRepository.save(cnab);
+	  	
+	}
+	
+	public Double convertValue(String valor) {
+		Double d = Double.parseDouble(valor);
+		return d/ 100.00;
+	}
+	
+	public String discoverType (String type) {
+		switch (type) {
+			case "1":
+				return "Debito";
+			case "2":
+				return "Boleto";
+			case "3":
+				return "Financiamento";
+			case "4":
+				return "Credito";
+			case "5":
+				return "Recebimento Emprestimo";
+			case "6":
+				return "Vendas";
+			case "7":
+				return "Recebimento TED";
+			case "8":
+				return "Recebimento DOC";
+			case "9":
+				return "Aluguel";
+			default: 
+				return "Nao encontrado";
+		}
+	}
+}

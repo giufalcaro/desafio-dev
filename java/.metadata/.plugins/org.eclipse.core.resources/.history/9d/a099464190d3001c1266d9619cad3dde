@@ -1,0 +1,12 @@
+package com.movFin.api.service;
+
+import com.movFin.api.model.Cnab;
+
+public interface ICnabService {
+  
+	public Cnab readLine(String line);
+	
+	public Double convertValue(String valor);
+	
+	public String discoverType (String type);
+}

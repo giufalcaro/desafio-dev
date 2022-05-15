@@ -1,0 +1,92 @@
+package com.movFin.api.model;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+@RestController
+public class FileController {
+
+	@PostMapping("/mensagem")
+	public String mensagem(@RequestParam("file")MultipartFile multiParfile) {
+		
+		try {
+			InputStream inputStream = multiParfile.getInputStream();
+			
+			new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
+			                    .lines()
+			                    .forEach(t ->  readLine(t));
+			
+	    } catch(IOException ex)	{
+	        ex.printStackTrace();
+	    }
+		return String.format("file is here!!!", multiParfile.getOriginalFilename());
+	}
+	
+	
+	public void readLine(String line) {
+	  
+	  	String tipo = discoverType(line.substring(0, 1));
+	  	String data = line.substring(1, 9);
+	  	String valor = convertValue(line.substring(9, 19)).toString();
+	  	String cpf = line.substring(19, 30);
+	  	String cartao = line.substring(30, 42);
+	  	String hora = line.substring(42, 48);
+	  	String nomeRepresentante = line.substring(48, 62);
+	  	String nomeLoja = line.substring(62, 80);
+	  	
+        System.out.print(tipo);
+        System.out.print(" Data: ");
+        System.out.print(data);
+        System.out.print(" Valor: ");
+        System.out.print(valor);
+        System.out.print(" cpf: ");
+        System.out.print(cpf);
+        System.out.print(" cartao: ");
+        System.out.print(cartao);
+        System.out.print(" hora: ");
+        System.out.print(hora);
+        System.out.print(" Nome representante: ");
+        System.out.print(nomeRepresentante);
+        System.out.print(" Nome loja: ");
+        System.out.print(nomeLoja);
+        System.out.print("\n");
+	}
+	
+	public Double convertValue(String valor) {
+		Double d = Double.parseDouble(valor);
+		return d/ 100.00;
+	}
+	
+	public String discoverType (String type) {
+		switch (type) {
+			case "1":
+				return "Debito";
+			case "2":
+				return "Boleto";
+			case "3":
+				return "Financiamento";
+			case "4":
+				return "Credito";
+			case "5":
+				return "Recebimento Emprestimo";
+			case "6":
+				return "Vendas";
+			case "7":
+				return "Recebimento TED";
+			case "8":
+				return "Recebimento DOC";
+			case "9":
+				return "Aluguel";
+			default: 
+				return "Nao encontrado";
+		}
+	}
+}

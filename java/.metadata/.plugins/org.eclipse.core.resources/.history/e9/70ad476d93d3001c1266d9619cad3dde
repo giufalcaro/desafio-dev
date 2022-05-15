@@ -1,0 +1,13 @@
+package com.movFin.api.service;
+
+import com.movFin.api.model.Cnab;
+import com.movFin.api.repository.CnabRepository;
+
+public interface ICnabService {
+  
+	public Cnab createCnab(String line,  CnabRepository repository);
+	
+	public Double convertValue(String valor);
+	
+	public String discoverType (String type);
+}

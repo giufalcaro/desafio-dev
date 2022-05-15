@@ -1,0 +1,10 @@
+package com.movFin.api.service;
+
+public interface ICnabService {
+  
+	public void saveCnab(String line);
+	
+	public Double convertValue(String valor);
+	
+	public String discoverType (String type);
+}

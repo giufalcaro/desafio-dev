@@ -1,0 +1,8 @@
+package com.movFin.api.model;
+
+import org.springframework.web.bind.annotation.RestController;
+
+public class Cnab {
+
+	
+}
