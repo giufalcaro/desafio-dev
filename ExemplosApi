@@ -1,0 +1,10 @@
+------IMPORTAR ARQUIVO
+curl --location --request POST 'http://localhost:8080/file/' \
+--form 'file=@"/home/giuliano/Área de Trabalho/qaa/CNAB"'
+
+----- BUSCAR TODOS
+curl --location --request GET 'http://localhost:8080/find'
+
+----- BUSCAR POR CPF
+curl --location --request GET 'http://localhost:8080/findByCpf' \
+--header 'cpf: 55641815063'
